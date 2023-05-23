@@ -4,11 +4,19 @@ import Image from "next/image";
 import Comments from "@/components/Comments";
 
 export default function ArtPieceDetailsPage({ piece }) {
-  const { imageSource: image, title, artist, year, genre, colors } = piece;
+  const {
+    imageSource: image,
+    title,
+    artist,
+    year,
+    genre,
+    colors,
+    slug,
+  } = piece;
   return (
     <section className={styles.wrapper}>
       <div className={styles.actionContainer}>
-        <FavoriteButton isFavorite={false} />
+        <FavoriteButton slug={slug} />
       </div>
       <h2>{title}</h2>
       <div className={styles.imageContainer}>
